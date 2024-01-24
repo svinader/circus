@@ -24,3 +24,100 @@
 # Github Fork (repozitorija kopija) - https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo
 # Klonēt repozitoriju - hhttps://code.visualstudio.com/docs/sourcecontrol/intro-to-git
 
+#Deniss Žuravels
+
+import random
+
+a = 100
+b = 1
+c = 1
+
+print("Welcome to circus")
+
+i = 1
+#tas skaita lai spēle bija maksimum 25 raundi
+while i <= 25:
+    print(i)
+    i = i + 1
+ 
+    #tas dara speletaja gālienu
+    if a > b :
+        print("You throw cube")
+        user_throw = int(random.randint(1, 6))
+        print("Your throw is:" + str(user_throw))
+        b = b + user_throw
+        print("You are on square:" + str(b))
+        blue = [18, 80, 74]
+        #tas parbauda vai speletajs trapeja uz ziles kapnes 
+        for x in blue:
+            if b == x:
+                print("You are on blue ladder! You go to 11 cells ago!")
+                b = b - 11
+                print("You are on square:" + str(b))
+        blues = [67]
+        #tas parbauda vai speletajs trapeja uz ziles kapnes kas dara vairak ceļus atpakaļ
+        for x in blue:
+            if b == x:
+                print("You are on blue ladder! You go to 21 cells ago!")
+                b = b - 21
+                print("You are on square:" + str(b))
+        red = [15, 39, 87]
+        #tas parbauda vai speletajs trapeja uz sarkanas kapnes 
+        for y in red:
+            if b == y:
+                print("You are on red ladder! You go to 9 steps forward!")
+                b = b + 9
+                print("You are on square:" + str(b))
+        reds = [33]
+        #tas parbauda vai speletajs trapeja uz sarkanas kapnes kas dara vairak ceļus uz priekšu
+        for y in red:
+            if b == y:
+                print("You are on red ladder! You go to 19 steps forward!")
+                b = b + 19
+                print("You are on square:" + str(b))
+        #tas parbauda vai speletajs uzvareja
+        if a <= b :
+            print("You win!")
+            break
+    #tas dara kompjutera gālienu
+    if a > c :
+        print("Computer throw cube")
+        computer_throw = int(random.randint(1, 6))
+        print("Computer throw is:" + str(computer_throw))
+        c = c + computer_throw
+        print("Computer are on square:" + str(c))
+        blue = [18, 80, 74]
+        #tas parbauda vai speletajs trapeja uz ziles kapnes
+        for x in blue:
+            if c == x:
+                print("Computer are on blue ladder! Computer go to 11 cells ago!")
+                c = c - 11
+                print("Computer are on square:" + str(c))
+        blues = [67]
+        #tas parbauda vai kompjuters trapeja uz ziles kapnes kas dara vairak ceļus atpakaļ
+        for x in blue:
+            if c == x:
+                print("Computer are on blues ladder! Computer go to 21 cells ago!")
+                c = c - 21
+                print("Computer are on square:" + str(c))
+        red = [15, 39, 87]
+        #tas parbauda vai kompjuters trapeja uz sarkanas kapnes 
+        for y in red:
+            if c == y:
+                print("Computer are on red ladder! Computer go to 9 steps forward!")
+                c = c + 9
+                print("Computer are on square:" + str(c))
+        reds = [33]
+        #tas parbauda vai kompjuters trapeja uz sarkanas kapnes kas dara vairak ceļus uz priekšu
+        for y in red:
+            if c == y:
+                print("Computer are on reds ladder! Computer go to 19 steps forward!")
+                c = c + 19
+                print("Computer are on square:" + str(c))
+        #tas parbauda vai kompjuters uzvareja
+        if a <= c :
+            print("Computer win!")
+            break
+#ja uzvaraja nav tad ir rakstits ka neizšķirts
+else :
+        print("Game over! It's a tie!")
